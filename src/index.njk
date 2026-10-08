@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.seo_title | escape }}</title>
+  <meta name="description" content="{{ site.seo_description | escape }}">
+  <meta name="theme-color" content="#17151a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.seo_title | escape }}">
+  <meta property="og:description" content="{{ site.seo_description | escape }}">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="preload" href="/fonts/knewave.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/questrial.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="#top" class="site-header__logo-link" aria-label="Johnny Madness, naar boven">
+        <img src="/images/logo.webp" alt="Johnny Madness" class="site-header__logo" width="900" height="300">
+      </a>
+      <nav class="site-header__nav" aria-label="Hoofdnavigatie">
+        <a href="#contactform" class="site-header__link">{{ site.header_contact_label | escape }}</a>
+        <a href="{{ site.booking_url | escape }}" class="site-header__cta" target="_blank" rel="noopener">
+          <span>{{ site.header_button | escape }}</span>
+          <span class="site-header__cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="visually-hidden">Johnny Madness: piano-entertainer Johnny Corsie en drummer Power Patrick</h1>
+      {% heroPicture home.hero.image_desktop, home.hero.image_mobile, home.hero.alt %}
+      <div class="hero__overlay" aria-hidden="true"></div>
+    </section>
+
+    <div class="ridge" aria-hidden="true"></div>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="intro__inner">
+        <h2 class="intro__heading">{{ home.intro.heading | escape }}</h2>
+        <div class="intro__text">
+          {{ home.intro.text | paragraphs | safe }}
+        </div>
+      </div>
+    </section>
+
+    <div class="ridge" aria-hidden="true"></div>
+
+    <!-- CONTACT / BOEKEN -->
+    <section class="booking" id="contactform">
+      <div class="booking__background" aria-hidden="true">
+        {% image home.booking.background, "" %}
+      </div>
+
+      <div class="booking__container">
+        <div class="booking__content">
+          <h2 class="booking__heading">{{ home.booking.heading | escape }}</h2>
+          <div class="booking__text">
+            {{ home.booking.text | paragraphs | safe }}
+          </div>
+          {% if home.booking.usps and home.booking.usps.length %}
+          <ul class="booking__usps">
+            {% for usp in home.booking.usps %}<li class="booking__usp"><span class="booking__usp-number">{{ loop.index | pad }}</span><span>{{ usp | escape }}</span></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+        <div class="booking__card">
+          <div class="booking__card-label">{{ home.booking.card_label | escape }}</div>
+          <h3 class="booking__card-heading">{{ home.booking.card_heading | escape }}</h3>
+          <div class="booking__card-text">
+            {{ home.booking.card_text | paragraphs | safe }}
+          </div>
+          <a class="booking__button" href="{{ site.booking_url | escape }}" target="_blank" rel="noopener">
+            <span>{{ home.booking.button | escape }}</span>
+            <span class="booking__button-arrow" aria-hidden="true">→</span>
+          </a>
+          {% if home.booking.note %}<div class="booking__note">{{ home.booking.note | escape }}</div>{% endif %}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__inner">
+        <div class="footer__grid">
+
+          <div class="footer__brand">
+            <a href="#top" class="footer__logo-link" aria-label="Johnny Madness, naar boven">
+              <img src="/images/logo.webp" alt="Johnny Madness" class="footer__logo" loading="lazy" width="900" height="300">
+            </a>
+          </div>
+
+          <div class="footer__navigation">
+            <div class="footer__column-heading">Navigation</div>
+            <nav class="footer__nav" aria-label="Footer navigatie">
+              <a class="footer__nav-link" href="#top">
+                <span>Home</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <a class="footer__nav-link" href="{{ site.booking_url | escape }}">
+                <span>Contact</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </nav>
+          </div>
+
+          <div class="footer__cta-column">
+            <div class="footer__cta-small">{{ site.footer_cta_small | escape }}</div>
+            <a class="footer__button" href="{{ site.booking_url | escape }}">
+              <span>{{ site.footer_button | escape }}</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+
+          <div class="footer__social-column">
+            <div class="footer__social-heading">{{ site.social_heading | escape }}</div>
+            <div class="footer__social-text">{{ site.social_text | paragraphs | safe }}</div>
+            {% if site.instagram_url or site.youtube_url or site.facebook_url %}<div class="footer__socials">
+              {% if site.instagram_url %}<a href="{{ site.instagram_url | escape }}" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>{% endif %}
+              {% if site.youtube_url %}<a href="{{ site.youtube_url | escape }}" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 6.2a3 3 0 0 0-2.1-2.1C17.4 3.6 12 3.6 12 3.6s-5.4 0-7.3.5a3 3 0 0 0-2.1 2.1A29 29 0 0 0 2.1 12a29 29 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 7.3.5 7.3.5s5.4 0 7.3-.5a3 3 0 0 0 2.1-2.1 29 29 0 0 0 .5-5.8 29 29 0 0 0-.5-5.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+              </a>{% endif %}
+              {% if site.facebook_url %}<a href="{{ site.facebook_url | escape }}" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.8 8.2h2.7V4.5c-.5-.1-2.1-.2-4-.2-4 0-6.7 2.4-6.7 6.9v3.9H1.3v4.1h4.5V24h5.4v-4.8h4.4l.7-4.1h-5.1v-3.5c0-1.2.3-2 2.6-2Z"/></svg>
+              </a>{% endif %}
+            </div>{% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="footer__copyright-inner">
+        <span class="footer__year">© <span id="year">{{ "" | year }}</span></span>
+        <span>{{ site.copyright_text | escape }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

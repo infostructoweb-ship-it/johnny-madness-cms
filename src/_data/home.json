@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "image_desktop": "/images/uploads/hero-desktop.png",
+    "image_mobile": "/images/uploads/hero-mobile.png",
+    "alt": "Johnny Corsie achter de piano en Power Patrick achter de drums op een podium vol publiek"
+  },
+  "intro": {
+    "heading": "Johnny Madness is dé power-act op jouw evenement!",
+    "text": "Samen met drummer Power Patrick raast piano-entertainer Johnny Corsie in moordend tempo langs de hits die jij wil horen. Van alltime classics tot de hedendaagse hitlijsten, iedere show met dezelfde missie: gas d’r op! Samen speelden ze talloze piano- en special request shows, wat maakt dat het repertoire van dit duo eindeloos is. En na al die duizenden verzoekjes weten ze precies op welke partyknallers jij los gaat. So prepare to shake your booty, in 40 minutes Johnny Madness will rock your socks off!"
+  },
+  "booking": {
+    "background": "/images/uploads/contact-bg.jpg",
+    "heading": "Vertel ons wat jullie plannen zijn",
+    "text": "Op zoek naar live muziek voor jullie feest of event? Vertel ons wat jullie in gedachten hebben. We denken graag met je mee en nemen zo snel mogelijk contact met je op.",
+    "usps": [
+      "Live muziek die sfeer maakt",
+      "Voor bruiloften, privéfeesten en bedrijfsfeesten",
+      "Persoonlijk en snel contact"
+    ],
+    "card_label": "Boek The Johnny Corsie Show",
+    "card_heading": "Klaar om de datum te checken?",
+    "card_text": "Op onze boekingspagina geef je eenvoudig de datum, locatie en belangrijkste informatie over jullie feest door.",
+    "button": "Bekijk beschikbaarheid & boek de show",
+    "note": "Je wordt doorgestuurd naar onze externe boekingspagina."
+  }
+}
