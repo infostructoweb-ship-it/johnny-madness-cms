@@ -1,0 +1,119 @@
+# Pages CMS configuratie – bepaalt wat de klant kan aanpassen.
+# Docs: https://pagescms.org/docs/configuration/
+
+media:
+  input: src/images/uploads
+  output: /images/uploads
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: home
+    label: Homepagina
+    type: file
+    path: src/_data/home.json
+    format: json
+    fields:
+      - name: hero
+        label: Hero (grote afbeelding bovenaan)
+        type: object
+        fields:
+          - name: image_desktop
+            label: Afbeelding desktop (liggend)
+            type: image
+            required: true
+          - name: image_mobile
+            label: Afbeelding mobiel (staand)
+            type: image
+          - name: alt
+            label: Beschrijving van de afbeelding (voor Google en slechtzienden)
+            type: string
+      - name: intro
+        label: Introductie
+        type: object
+        fields:
+          - name: heading
+            label: Kop
+            type: string
+            required: true
+          - name: text
+            label: Tekst (lege regel = nieuwe alinea)
+            type: text
+      - name: booking
+        label: Boeken-sectie
+        type: object
+        fields:
+          - name: background
+            label: Achtergrondafbeelding
+            type: image
+          - name: heading
+            label: Kop
+            type: string
+          - name: text
+            label: Tekst
+            type: text
+          - name: usps
+            label: Voordelen (genummerde lijst)
+            type: string
+            list: true
+          - name: card_label
+            label: Klein label boven de kaart
+            type: string
+          - name: card_heading
+            label: Kop in de kaart
+            type: string
+          - name: card_text
+            label: Tekst in de kaart
+            type: text
+          - name: button
+            label: Tekst op de knop
+            type: string
+          - name: note
+            label: Kleine tekst onder de knop
+            type: string
+
+  - name: site
+    label: Algemene instellingen
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: seo_title
+        label: Paginatitel (zichtbaar in Google en het browsertabblad)
+        type: string
+      - name: seo_description
+        label: Omschrijving voor Google
+        type: text
+      - name: booking_url
+        label: Link van alle boekknoppen
+        type: string
+      - name: header_button
+        label: Knop rechtsboven
+        type: string
+      - name: header_contact_label
+        label: Contactlink rechtsboven
+        type: string
+      - name: footer_cta_small
+        label: Footer – tekst boven de knop
+        type: string
+      - name: footer_button
+        label: Footer – knoptekst
+        type: string
+      - name: social_heading
+        label: Footer – kop social media
+        type: string
+      - name: social_text
+        label: Footer – tekst social media
+        type: text
+      - name: instagram_url
+        label: Instagram-link (leeg = icoon verborgen)
+        type: string
+      - name: youtube_url
+        label: YouTube-link (leeg = icoon verborgen)
+        type: string
+      - name: facebook_url
+        label: Facebook-link (leeg = icoon verborgen)
+        type: string
+      - name: copyright_text
+        label: Copyrighttekst
+        type: string
