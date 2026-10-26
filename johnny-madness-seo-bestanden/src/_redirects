@@ -1,9 +1,0 @@
-# Oude Shopify-adressen doorsturen naar de homepage (301 = permanent)
-/pages/contact   /#contactform   301
-/pages/*         /               301
-/collections/*   /               301
-/products/*      /               301
-/blogs/*         /               301
-/cart            /               301
-/account/*       /               301
-/search          /               301
