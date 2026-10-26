@@ -14,10 +14,26 @@ content:
     path: src/_data/home.json
     format: json
     fields:
+      - name: seo
+        label: Google (SEO)
+        type: object
+        fields:
+          - name: title
+            label: Paginatitel in Google en het browsertabblad
+            type: string
+            description: Ideaal 50 tot 60 tekens. Zet de belangrijkste woorden vooraan.
+          - name: description
+            label: Omschrijving in Google
+            type: text
+            description: Ideaal 120 tot 155 tekens. Vertel wat je biedt en waarom iemand moet klikken.
       - name: hero
         label: Hero (grote afbeelding bovenaan)
         type: object
         fields:
+          - name: h1
+            label: Hoofdkop voor Google (niet zichtbaar op de site)
+            type: string
+            description: Google leest deze kop als onderwerp van de pagina. Noem wie je bent en wat je doet.
           - name: image_desktop
             label: Afbeelding desktop (liggend)
             type: image
@@ -78,12 +94,30 @@ content:
     path: src/_data/site.json
     format: json
     fields:
-      - name: seo_title
-        label: Paginatitel (zichtbaar in Google en het browsertabblad)
+      - name: url
+        label: Websiteadres
         type: string
-      - name: seo_description
-        label: Omschrijving voor Google
-        type: text
+        description: Het volledige adres, zonder schuine streep aan het eind. Bijvoorbeeld https://jouwdomein.nl
+        pattern:
+          regex: "^(https://[^/\\s]+)?$"
+          message: Begin met https:// en laat de schuine streep aan het eind weg.
+      - name: name
+        label: Naam van de act
+        type: string
+      - name: area_served
+        label: Regio waar jullie optreden
+        type: string
+      - name: members
+        label: Leden
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Naam
+            type: string
+          - name: role
+            label: Rol
+            type: string
       - name: booking_url
         label: Link van alle boekknoppen
         type: string
