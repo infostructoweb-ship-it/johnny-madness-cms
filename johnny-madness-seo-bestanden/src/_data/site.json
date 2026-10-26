@@ -1,0 +1,26 @@
+{
+  "url": "",
+  "name": "Johnny Madness",
+  "area_served": "Nederland",
+  "members": [
+    {
+      "name": "Johnny Corsie",
+      "role": "Piano-entertainer en zanger"
+    },
+    {
+      "name": "Power Patrick",
+      "role": "Drummer"
+    }
+  ],
+  "booking_url": "https://livegigs.nl/acts/the-johnny-corsie-show/",
+  "header_button": "Boek de show",
+  "header_contact_label": "Contact",
+  "footer_cta_small": "Ready to make some noise?",
+  "footer_button": "Boek The Johnny Corsie Show",
+  "social_heading": "Volg ons",
+  "social_text": "Bekijk sfeer, fragmenten en updates van onze shows.",
+  "instagram_url": "",
+  "youtube_url": "",
+  "facebook_url": "",
+  "copyright_text": "Structoweb All rights reserved."
+}

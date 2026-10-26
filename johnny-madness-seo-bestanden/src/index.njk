@@ -1,0 +1,58 @@
+---
+layout: base.njk
+---
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="visually-hidden">{{ home.hero.h1 | escape }}</h1>
+      {% heroPicture home.hero.image_desktop, home.hero.image_mobile, home.hero.alt %}
+      <div class="hero__overlay" aria-hidden="true"></div>
+    </section>
+
+    <div class="ridge" aria-hidden="true"></div>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="intro__inner">
+        <h2 class="intro__heading">{{ home.intro.heading | escape }}</h2>
+        <div class="intro__text">
+          {{ home.intro.text | paragraphs | safe }}
+        </div>
+      </div>
+    </section>
+
+    <div class="ridge" aria-hidden="true"></div>
+
+    <!-- CONTACT / BOEKEN -->
+    <section class="booking" id="contactform">
+      <div class="booking__background" aria-hidden="true">
+        {% image home.booking.background, "" %}
+      </div>
+
+      <div class="booking__container">
+        <div class="booking__content">
+          <h2 class="booking__heading">{{ home.booking.heading | escape }}</h2>
+          <div class="booking__text">
+            {{ home.booking.text | paragraphs | safe }}
+          </div>
+          {% if home.booking.usps and home.booking.usps.length %}
+          <ul class="booking__usps">
+            {% for usp in home.booking.usps %}<li class="booking__usp"><span class="booking__usp-number">{{ loop.index | pad }}</span><span>{{ usp | escape }}</span></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+        <div class="booking__card">
+          <div class="booking__card-label">{{ home.booking.card_label | escape }}</div>
+          <h3 class="booking__card-heading">{{ home.booking.card_heading | escape }}</h3>
+          <div class="booking__card-text">
+            {{ home.booking.card_text | paragraphs | safe }}
+          </div>
+          <a class="booking__button" href="{{ site.booking_url | escape }}" target="_blank" rel="noopener">
+            <span>{{ home.booking.button | escape }}</span>
+            <span class="booking__button-arrow" aria-hidden="true">→</span>
+          </a>
+          {% if home.booking.note %}<div class="booking__note">{{ home.booking.note | escape }}</div>{% endif %}
+        </div>
+      </div>
+    </section>
