@@ -25,6 +25,7 @@ export default function (eleventyConfig) {
     "src/images/static": "images",
     "src/favicon.ico": "favicon.ico",
     "src/_headers": "_headers",
+    "src/_redirects": "_redirects",
   });
 
   // Hero: aparte afbeelding voor desktop en mobiel, automatisch omgezet naar WebP

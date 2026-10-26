@@ -657,3 +657,31 @@ a:focus-visible {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* =========================================================
+   404-PAGINA
+   ========================================================= */
+.not-found {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 20px 80px;
+  background: var(--ink);
+  text-align: center;
+}
+.not-found__inner { max-width: 640px; }
+.not-found__heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1.04;
+  letter-spacing: 0;
+  color: var(--red);
+}
+.not-found__text { margin: 20px 0 0; color: var(--grey-text); font-size: 18px; }
+.not-found__button { display: inline-flex; width: auto; margin-top: 32px; }
+@media screen and (max-width: 749px) {
+  .not-found__heading { font-size: 36px; line-height: 1.1; }
+}

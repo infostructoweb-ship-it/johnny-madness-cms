@@ -1,5 +1,10 @@
 {
+  "seo": {
+    "title": "Johnny Madness | Live piano & drums power-act voor jouw feest",
+    "description": "Piano-entertainer Johnny Corsie en drummer Power Patrick: een live power-act vol partyknallers voor bruiloften, privéfeesten en bedrijfsfeesten."
+  },
   "hero": {
+    "h1": "Johnny Madness: live piano-entertainer Johnny Corsie en drummer Power Patrick",
     "image_desktop": "/images/uploads/hero-desktop.png",
     "image_mobile": "/images/uploads/hero-mobile.png",
     "alt": "Johnny Corsie achter de piano en Power Patrick achter de drums op een podium vol publiek"
